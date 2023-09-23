@@ -19,7 +19,7 @@ fun count2(input: String): String {
     return res.toString()
 }
 fun main() {
-    println("Введите строку символов:  ")
+    println("Введите строку символов: ")
     val input = readLine().toString()
     val output = count2(input)
     println(output)
