@@ -1,16 +1,22 @@
+import kotlin.math.pow
+
 fun main() {
     println("Введите данные x: ")
-    val x = 3.toDouble()
+    val x = readln().toDouble()
     println("Введите данные n: ")
     var n = readln().toDouble()
-    var y = 0
-    while ((n % x) == 0.toDouble())
-    {
-        y += 1
-        n /= 3
+
+    if (n != null && x != null){
+        var y = 0
+        while (x.pow(y).toDouble() != n) {
+            if (x.toDouble().pow(y).toInt() > n) {
+                println("Целочисленный показатель не существует")
+                return
+            }
+            y++
+        }
+        println("Целочисленный показатель степени y: $y")
+    } else {
+        println("Ошибка ввода")
     }
-    if (n == 0.toDouble())
-        println(y)
-    else
-        println("Целочисленный показатель не существует")
 }
